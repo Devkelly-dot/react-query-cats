@@ -9,6 +9,7 @@ import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import { Provider } from 'react-redux';
 import store from './store';
 import FavFacts from './pages/FavFacts';
+import TopFact from './partials/TopFact';
 
 export default function App()
 {
@@ -19,6 +20,7 @@ export default function App()
       <QueryClientProvider client={client}>
         <BrowserRouter>
           <Nav/>
+          <TopFact/>
           <Routes>
             <Route index element={<Home/>}/>
             <Route path="cat" element={<Catfact/>}/>

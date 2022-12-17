@@ -11,9 +11,9 @@ export default function Nav()
     }
     return(
         <header style={{display:"flex"}}>
-            <div onClick={()=>{nav('/')}} style={{cursor:'pointer', marginRight:"5px"}}>Home</div>
-            <div onClick={()=>{nav('/cat')}} style={{cursor:'pointer', marginRight:"5px"}}>Large Fact</div>
-            <div onClick={()=>{nav('/fav')}} style={{cursor:'pointer', marginRight:"5px"}}>Fav Facts</div>
+            <div onClick={()=>{nav('/')}} style={{cursor:'pointer', marginRight:"15px"}}>Home</div>
+            <div onClick={()=>{nav('/cat')}} style={{cursor:'pointer', marginRight:"15px"}}>Large Fact</div>
+            <div onClick={()=>{nav('/fav')}} style={{cursor:'pointer', marginRight:"15px"}}>Fav Facts</div>
         </header>
     )
 }
