@@ -51,7 +51,7 @@ export default function Home()
             <h2>Your favorite facts</h2>
             <ol>
             {
-                favFacts.slice(0,5).map((fact)=><li key={fact}>{fact}</li>)
+                favFacts.slice(0,5).map((fact,index)=><li key={toString(index)+fact}>{fact}</li>)
             }
             </ol>
             {

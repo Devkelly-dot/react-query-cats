@@ -15,7 +15,7 @@ export default function FavFacts()
             <ol>
                 {
                     favFacts.map((fact,index)=>
-                        <li style={{marginBottom:"1rem"}} key={fact}>{fact} <button onClick={()=>removeFact(index)} >Remove</button></li>
+                        <li style={{marginBottom:"1rem"}} key={toString(index)+fact}>{fact} <button onClick={()=>removeFact(index)} >Remove</button></li>
                     )
                 }
             </ol>
