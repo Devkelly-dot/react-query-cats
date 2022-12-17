@@ -8,6 +8,7 @@ import Nav from './partials/Nav';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import { Provider } from 'react-redux';
 import store from './store';
+import FavFacts from './pages/FavFacts';
 
 export default function App()
 {
@@ -21,6 +22,7 @@ export default function App()
           <Routes>
             <Route index element={<Home/>}/>
             <Route path="cat" element={<Catfact/>}/>
+            <Route path="fav" element={<FavFacts/>}/>
             <Route path="*" element={<h1>Page not found</h1>}/>
           </Routes>  
         </BrowserRouter>

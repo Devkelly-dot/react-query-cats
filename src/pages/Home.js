@@ -1,11 +1,18 @@
 import {useQuery} from '@tanstack/react-query'
 import Axios from "axios";
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home()
 {
+    const navigate = useNavigate()
     const favFacts = useSelector((state)=>state.favFacts)
     const dispatch = useDispatch()
+
+    function nav(address)
+    {
+        navigate(address);
+    }
 
     async function getCatFact()
     {
@@ -42,11 +49,13 @@ export default function Home()
                 )      
             }
             <h2>Your favorite facts</h2>
+            <ol>
             {
-                favFacts.slice(0,5).map((fact)=><p key={fact}>{fact}</p>)
+                favFacts.slice(0,5).map((fact)=><li key={fact}>{fact}</li>)
             }
+            </ol>
             {
-                favFacts[5]?<p style={{cursor:"pointer"}}>... click here to see more</p>:<></>
+                favFacts[5]?<p style={{cursor:"pointer"}} onClick={()=>nav('/fav')}>... click here to see more</p>:<></>
             }
         </>
     )

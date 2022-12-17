@@ -12,20 +12,20 @@ export default function Catfact()
     const {data:catFact, isLoading, isError, refetch} = useQuery(["cat"], getCatFact);
     return(
         <>
-            <h1>Cat</h1>
+            <h1>Large Cat Fact</h1>
             {
                 isError?(
-                    <p>Couldn't grab a cat fact :O</p>
+                    <h2>Couldn't grab a cat fact :O</h2>
                 ):
                 (
                     !isLoading?(
                         <>
-                            <p>{catFact?.fact}</p>
+                            <h2>{catFact?.fact}</h2>
                             <button onClick={refetch}>New Fact</button>
                         </>
                     ):
                     (
-                        <p>Grabbing Cat Fact</p>
+                        <h2>Grabbing Cat Fact</h2>
                     )
                 )      
             }
