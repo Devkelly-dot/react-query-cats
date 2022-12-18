@@ -23,8 +23,18 @@ export default function Home()
 
     function favThisFact(fact)
     {
+        for(let i in favFacts)
+        {
+            if(favFacts[i]===fact)
+            {
+                refetch()
+                return false;
+            }
+        }
+
         dispatch({type: 'addFact', fact:fact})
         refetch()
+        return true;
     }
 
     const {data:catFact, isLoading, isError, refetch} = useQuery(["cat"], getCatFact);
@@ -38,7 +48,7 @@ export default function Home()
                 (
                     !isLoading?(
                         <>
-                            <p>{catFact?.fact}</p>
+                            <p  style={{minHeight:"3em"}}>{catFact?.fact}</p>
                             <button onClick={()=>favThisFact(catFact?.fact)}>Add To Favorites</button>
                             <button onClick={refetch}>New Fact</button>
                         </>

@@ -9,7 +9,7 @@ export default function TopFact()
         favFact = favFacts[favFacts.length-1]
 
     return(
-        <div>
+        <div style={{minHeight:"4em"}}>
             {favFact!==""?<>Most recent fact: <b>{favFact}</b></>:<></>}
         </div>
     )
