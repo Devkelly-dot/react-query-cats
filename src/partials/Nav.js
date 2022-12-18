@@ -1,3 +1,4 @@
+import '../styles/Nav.css'
 import { useNavigate } from 'react-router-dom';
 import { ThemeContext } from '..';
 import React from 'react';
