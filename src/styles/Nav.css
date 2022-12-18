@@ -1,3 +1,14 @@
 a{
     margin-right: 5px;
 }
+
+.nav{
+    display: flex;
+    flex-direction: row;
+}
+
+.dark
+{
+    background-color: black;
+    color:white;
+}

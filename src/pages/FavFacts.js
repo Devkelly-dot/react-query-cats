@@ -1,7 +1,10 @@
 import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+import { ThemeContext } from '..';
 
 export default function FavFacts()
 {
+    const {theme, setTheme} = React.useContext(ThemeContext)
     const favFacts = useSelector((state)=>state.favFacts)
     const dispatch = useDispatch()
 
@@ -10,7 +13,7 @@ export default function FavFacts()
         dispatch({type: 'remFact', index:index})
     }
     return (
-        <div>
+        <div className={`container ${theme==="dark"&&"dark"}`}>
             <h1>Fav Facts</h1>
             <ol>
                 {

@@ -1,8 +1,12 @@
 import {useQuery} from '@tanstack/react-query'
 import Axios from "axios";
+import { ThemeContext } from '..';
+import React from 'react';
 
 export default function Catfact()
 {
+    const {theme, setTheme} = React.useContext(ThemeContext)
+
     async function getCatFact()
     {
         const res = await Axios.get("https://catfact.ninja/fact")
@@ -11,7 +15,7 @@ export default function Catfact()
     }
     const {data:catFact, isLoading, isError, refetch} = useQuery(["cat"], getCatFact);
     return(
-        <>
+        <div className={`container ${theme==="dark"&&"dark"}`}>
             <h1>Large Cat Fact</h1>
             {
                 isError?(
@@ -29,6 +33,6 @@ export default function Catfact()
                     )
                 )      
             }
-        </>
+        </div>
     )
 }
